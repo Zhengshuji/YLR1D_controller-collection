@@ -1,0 +1,13 @@
+# ===== 工作区（分别对应 YLR1D_Controller / YLR1D_Controller_SDK 仓库，此处仅文档标注）=====
+ros2_ylr1d_controller_ws/
+YLR1D_ROS2/
+
+# ===== 厂家仿真软件（TR-Sim / TR-Pad 安装包，体积过大不入库，本地归档）=====
+TR-RD28&&YL-R1D - 副本/仿真环境及上位机程序/
+
+# ===== 系统与编辑器杂项 =====
+Thumbs.db
+.DS_Store
+desktop.ini
+*.tmp
+~$*
