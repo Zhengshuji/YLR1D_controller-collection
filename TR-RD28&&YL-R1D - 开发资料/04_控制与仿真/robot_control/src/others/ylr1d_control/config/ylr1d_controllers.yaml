@@ -1,0 +1,152 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 200  # control loop frequency (Hz)
+
+    # ── Declare controller types ──────────────────────────
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    pid_controller:
+      type: forward_command_controller/ForwardCommandController
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PID Controller (unified) — effort interface for all 30 controllable joints
+#
+#   Subscribes to:  /pid_controller/commands  (Float64MultiArray)
+#   Interface:      effort
+#
+# The ylr1d_pid_controller node computes τ = PID(q_des, q_act, q̇_act) and
+# publishes the effort array to this topic.
+#
+# Joint order (30):
+#   0–3   steering     4× position
+#   4–7   drive        4× position (wheel servo angle)
+#   8–11  body         4× position
+#   12–18 left arm     7× position
+#   19–25 right arm    7× position
+#   26–27 left gripper 2× position
+#   28–29 right gripper 2× position
+# ═══════════════════════════════════════════════════════════════════════════
+pid_controller:
+  ros__parameters:
+    joints:
+      # Steering
+      - Joint_Base_to_RFWheelF
+      - Joint_Base_to_LFWheelF
+      - Joint_Base_to_RBWheelF
+      - Joint_Base_to_LBWheelF
+      # Drive
+      - Joint_RFWheelF_to_RFWheel
+      - Joint_LFWheelF_to_LFWheel
+      - Joint_RBWheelF_to_RBWheel
+      - Joint_LBWheelF_to_LBWheel
+      # Body
+      - Joint_Base_to_Body1
+      - Joint_Body1_to_Body2
+      - Joint_Body2_to_Body3
+      - Joint_Body3_to_Body4
+      # Left arm
+      - Joint_Body2_to_LeftArm1
+      - Joint_LeftArm1_to_LeftArm2
+      - Joint_LeftArm2_to_LeftArm3
+      - Joint_LeftArm3_to_LeftArm4
+      - Joint_LeftArm4_to_LeftArm5
+      - Joint_LeftArm5_to_LeftArm6
+      - Joint_LeftArm6_to_LeftArm7
+      # Right arm
+      - Joint_Body2_RightArm1
+      - Joint_RightArm1_to_RightArm2
+      - Joint_RightArm2_to_RightArm3
+      - Joint_RightArm3_to_RightArm4
+      - Joint_RightArm4_to_RightArm5
+      - Joint_RightArm5_to_RightArm6
+      - Joint_RightArm6_to_RightArm7
+      # Grippers
+      - Joint_LeftArm7_to_LeftFinger1
+      - Joint_LeftArm7_to_LeftFinger2
+      - Joint_RightArm7_to_RightFinger1
+      - Joint_RightArm7_to_RightFinger2
+    interface_name: effort
+
+# ═══════════════════════════════════════════════════════════════════════════
+# PID Gains (per-joint)
+#
+# These are loaded by the ylr1d_pid_controller node as ROS 2 parameters.
+# Each value can be a single scalar (broadcast to all joints) or an array
+# of 30 values (one per joint, matching the joint order above).
+#
+# Tuning guide:
+#   Steering:   kp=800,  ki=0,   kd=20   — stiff positioning
+#   Drive:      kp=400,  ki=0,   kd=10   — servo the wheel angle
+#   Body:       kp=3000, ki=50,  kd=100  — hold upper body, integral for sag
+#   Arms:       kp=5000, ki=100, kd=200  — gravity holding + steady-state
+#   Grippers:   kp=500,  ki=0,   kd=10   — light force, no over-squeeze
+# ═══════════════════════════════════════════════════════════════════════════
+ylr1d_pid_controller:
+  ros__parameters:
+    joints:
+      - Joint_Base_to_RFWheelF
+      - Joint_Base_to_LFWheelF
+      - Joint_Base_to_RBWheelF
+      - Joint_Base_to_LBWheelF
+      - Joint_RFWheelF_to_RFWheel
+      - Joint_LFWheelF_to_LFWheel
+      - Joint_RBWheelF_to_RBWheel
+      - Joint_LBWheelF_to_LBWheel
+      - Joint_Base_to_Body1
+      - Joint_Body1_to_Body2
+      - Joint_Body2_to_Body3
+      - Joint_Body3_to_Body4
+      - Joint_Body2_to_LeftArm1
+      - Joint_LeftArm1_to_LeftArm2
+      - Joint_LeftArm2_to_LeftArm3
+      - Joint_LeftArm3_to_LeftArm4
+      - Joint_LeftArm4_to_LeftArm5
+      - Joint_LeftArm5_to_LeftArm6
+      - Joint_LeftArm6_to_LeftArm7
+      - Joint_Body2_RightArm1
+      - Joint_RightArm1_to_RightArm2
+      - Joint_RightArm2_to_RightArm3
+      - Joint_RightArm3_to_RightArm4
+      - Joint_RightArm4_to_RightArm5
+      - Joint_RightArm5_to_RightArm6
+      - Joint_RightArm6_to_RightArm7
+      - Joint_LeftArm7_to_LeftFinger1
+      - Joint_LeftArm7_to_LeftFinger2
+      - Joint_RightArm7_to_RightFinger1
+      - Joint_RightArm7_to_RightFinger2
+
+    # ── Per-joint gains ──────────────────────────────────────
+    # All 30 values in order matching the joints list above.
+    # Format: [steer×4, drive×4, body×4, Larm×7, Rarm×7, Lgrip×2, Rgrip×2]
+
+    kp: [800, 800, 800, 800,
+         400, 400, 400, 400,
+         3000, 3000, 3000, 3000,
+         5000, 5000, 5000, 5000, 5000, 5000, 5000,
+         5000, 5000, 5000, 5000, 5000, 5000, 5000,
+         500, 500, 500, 500]
+
+    ki: [0, 0, 0, 0,
+         0, 0, 0, 0,
+         50, 50, 50, 50,
+         100, 100, 100, 100, 100, 100, 100,
+         100, 100, 100, 100, 100, 100, 100,
+         0, 0, 0, 0]
+
+    kd: [20, 20, 20, 20,
+         10, 10, 10, 10,
+         100, 100, 100, 100,
+         200, 200, 200, 200, 200, 200, 200,
+         200, 200, 200, 200, 200, 200, 200,
+         10, 10, 10, 10]
+
+    max_effort: [2000, 2000, 2000, 2000,
+                 2000, 2000, 2000, 2000,
+                 5000, 5000, 5000, 5000,
+                 10000, 10000, 10000, 10000, 10000, 10000, 10000,
+                 10000, 10000, 10000, 10000, 10000, 10000, 10000,
+                 500, 500, 500, 500]
+
+    i_max: 0   # integral clamp (0 = no clamp)
+    rate: 200

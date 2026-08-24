@@ -1,0 +1,528 @@
+# 动力学参数（质量 / 质心 / 惯量张量），逐 link 提取自展开后的 URDF。
+generated_by: xacro2dh
+robot: ylr1d
+source:
+  xacro: ..\urdf\ylr1d.xacro
+  config: ..\config
+convention_note: 惯量定义在过质心、与 link 系平行的坐标系中（URDF 规范）。com 为质心在 link 系中的位置。
+links:
+  Link_Base:
+    mass: 16.208
+    com:
+    - 0.037265
+    - 0.00025041
+    - 0.20252
+    inertia:
+      ixx: 0.11505
+      ixy: 6.7672e-05
+      ixz: -0.00091171
+      iyy: 0.13003
+      iyz: -7.4485e-06
+      izz: 0.19687
+  Link_RFWheelF:
+    mass: 0.065326
+    com:
+    - -0.016503
+    - 0.022032
+    - 0.045675
+    inertia:
+      ixx: 0.00010009
+      ixy: -2.3859e-06
+      ixz: 1.5623e-05
+      iyy: 9.8841e-05
+      iyz: -2.0629e-05
+      izz: 3.2329e-05
+  Link_RFWheel:
+    mass: 0.59053
+    com:
+    - -6.9823e-08
+    - 7.7958e-06
+    - -0.00039516
+    inertia:
+      ixx: 0.000991
+      ixy: 1.6018e-08
+      ixz: 6.1352e-10
+      iyy: 0.00099169
+      iyz: 1.2798e-08
+      izz: 0.0019158
+  Link_LFWheelF:
+    mass: 0.065326
+    com:
+    - -0.016503
+    - -0.022032
+    - 0.045675
+    inertia:
+      ixx: 0.00010009
+      ixy: 2.3856e-06
+      ixz: 1.5622e-05
+      iyy: 9.8841e-05
+      iyz: 2.063e-05
+      izz: 3.233e-05
+  Link_LFWheel:
+    mass: 0.59053
+    com:
+    - 4.872e-08
+    - -7.7945e-06
+    - 0.00039516
+    inertia:
+      ixx: 0.000991
+      ixy: -5.7334e-09
+      ixz: -8.2579e-10
+      iyy: 0.00099169
+      iyz: 1.2787e-08
+      izz: 0.0019158
+  Link_RBWheelF:
+    mass: 0.065326
+    com:
+    - -0.016503
+    - -0.022032
+    - 0.045675
+    inertia:
+      ixx: 0.00010009
+      ixy: 2.3856e-06
+      ixz: 1.5622e-05
+      iyy: 9.8841e-05
+      iyz: 2.063e-05
+      izz: 3.233e-05
+  Link_RBWheel:
+    mass: 0.59054
+    com:
+    - -5.3373e-06
+    - 5.62e-06
+    - -0.00039509
+    inertia:
+      ixx: 0.00099111
+      ixy: 2.4873e-07
+      ixz: -4.3126e-09
+      iyy: 0.00099158
+      iyz: 1.21e-08
+      izz: 0.0019158
+  Link_LBWheelF:
+    mass: 0.065326
+    com:
+    - -0.016503
+    - 0.022032
+    - 0.045675
+    inertia:
+      ixx: 0.00010009
+      ixy: -2.3859e-06
+      ixz: 1.5623e-05
+      iyy: 9.8841e-05
+      iyz: -2.0629e-05
+      izz: 3.2329e-05
+  Link_LBWheel:
+    mass: 0.59053
+    com:
+    - -1.8876e-08
+    - 7.7971e-06
+    - 0.00039516
+    inertia:
+      ixx: 0.000991
+      ixy: -8.0654e-09
+      ixz: 7.6909e-10
+      iyy: 0.00099169
+      iyz: -1.277e-08
+      izz: 0.0019158
+  Link_Body1:
+    mass: 3.3193
+    com:
+    - 2.0431e-05
+    - 2.2756e-05
+    - 0.19728
+    inertia:
+      ixx: 0.02602
+      ixy: -6.815e-06
+      ixz: 3.8149e-06
+      iyy: 0.02273
+      iyz: 4.9381e-06
+      izz: 0.018146
+  Link_Body2:
+    mass: 0.89792
+    com:
+    - -0.00013811
+    - 0.00013676
+    - 0.12647
+    inertia:
+      ixx: 0.0041276
+      ixy: 1.6471e-06
+      ixz: -1.7295e-05
+      iyy: 0.0033908
+      iyz: 2.0239e-06
+      izz: 0.0049394
+  Link_Body3:
+    mass: 0.18576
+    com:
+    - -1.8453e-05
+    - -0.00089236
+    - 0.0058854
+    inertia:
+      ixx: 0.00010796
+      ixy: -3.6748e-08
+      ixz: -9.7086e-09
+      iyy: 0.00010499
+      iyz: 1.1253e-05
+      izz: 0.000131
+  Link_Body4:
+    mass: 0.32035
+    com:
+    - 0.0079006
+    - -0.043025
+    - 0.0021283
+    inertia:
+      ixx: 0.00078827
+      ixy: -4.1876e-06
+      ixz: 2.8488e-06
+      iyy: 0.0010317
+      iyz: -3.8032e-06
+      izz: 0.00037789
+  Link_GlobalCameraSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_LeftArm1:
+    mass: 0.18855
+    com:
+    - -2.4744e-06
+    - 0.00013884
+    - 0.14429
+    inertia:
+      ixx: 0.00025685
+      ixy: -9.1075e-09
+      ixz: -1.0833e-08
+      iyy: 0.0002143
+      iyz: 5.5272e-05
+      izz: 0.00020537
+  Link_LeftArm2:
+    mass: 0.30282
+    com:
+    - -0.00028298
+    - 0.062776
+    - 0.0051005
+    inertia:
+      ixx: 0.00028782
+      ixy: -2.2443e-06
+      ixz: -6.2429e-07
+      iyy: 0.00026299
+      iyz: 8.205e-06
+      izz: 0.0003632
+  Link_LeftArm3:
+    mass: 0.14859
+    com:
+    - 0.0013571
+    - 0.21276
+    - -0.00028111
+    inertia:
+      ixx: 0.0001487
+      ixy: 8.1655e-06
+      ixz: 1.0722e-05
+      iyy: 0.00013112
+      iyz: 2.7447e-05
+      izz: 0.00013541
+  Link_LeftArm4:
+    mass: 0.21991
+    com:
+    - 0.052467
+    - 0.0093797
+    - 0.0042876
+    inertia:
+      ixx: 0.00013855
+      ixy: 5.4125e-06
+      ixz: 2.2157e-06
+      iyy: 0.00014667
+      iyz: 2.3407e-06
+      izz: 0.0001925
+  Link_LeftArm5:
+    mass: 0.13033
+    com:
+    - 9.9116e-05
+    - -0.010028
+    - 0.2099
+    inertia:
+      ixx: 0.00020934
+      ixy: -1.5184e-08
+      ixz: 1.0991e-07
+      iyy: 0.00019643
+      iyz: 8.498e-07
+      izz: 8.2592e-05
+  Link_LeftArm6:
+    mass: 0.060322
+    com:
+    - -3.688e-05
+    - -0.012949
+    - -4.9329e-05
+    inertia:
+      ixx: 2.0728e-05
+      ixy: 5.1213e-09
+      ixz: -3.5441e-08
+      iyy: 3.5531e-05
+      iyz: 7.5877e-09
+      izz: 2.0464e-05
+  Link_LeftArm7:
+    mass: 0.11858
+    com:
+    - -0.016492
+    - 0.00054322
+    - 0.063454
+    inertia:
+      ixx: 4.9251e-05
+      ixy: 1.7609e-07
+      ixz: 4.4751e-08
+      iyy: 2.0098e-05
+      iyz: -3.7183e-07
+      izz: 6.0674e-05
+  Link_LeftFinger1:
+    mass: 0.010871
+    com:
+    - -0.0035654
+    - 0.0037531
+    - 0.00036245
+    inertia:
+      ixx: 2.0608e-06
+      ixy: -2.9069e-09
+      ixz: -6.5533e-08
+      iyy: 8.9733e-07
+      iyz: 6.3671e-08
+      izz: 1.5899e-06
+  Link_LeftFinger2:
+    mass: 0.010871
+    com:
+    - -0.0035654
+    - 0.0037531
+    - 0.00036245
+    inertia:
+      ixx: 2.0608e-06
+      ixy: -2.9069e-09
+      ixz: -6.5533e-08
+      iyy: 8.9733e-07
+      iyz: 6.3671e-08
+      izz: 1.5899e-06
+  Link_LeftCameraSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_RightArm1:
+    mass: 0.18855
+    com:
+    - 2.4698e-06
+    - -0.00013886
+    - 0.14429
+    inertia:
+      ixx: 0.00025685
+      ixy: -9.0933e-09
+      ixz: 1.0831e-08
+      iyy: 0.0002143
+      iyz: -5.5272e-05
+      izz: 0.00020537
+  Link_RightArm2:
+    mass: 0.30282
+    com:
+    - -0.00028297
+    - -0.062776
+    - -0.0051005
+    inertia:
+      ixx: 0.00028782
+      ixy: 2.2444e-06
+      ixz: 6.2429e-07
+      iyy: 0.00026299
+      iyz: 8.205e-06
+      izz: 0.0003632
+  Link_RightArm3:
+    mass: 0.14859
+    com:
+    - 0.0013571
+    - 0.00028111
+    - 0.21276
+    inertia:
+      ixx: 0.0001487
+      ixy: -1.0722e-05
+      ixz: 8.1655e-06
+      iyy: 0.00013541
+      iyz: -2.7447e-05
+      izz: 0.00013112
+  Link_RightArm4:
+    mass: 0.21991
+    com:
+    - 0.052467
+    - -0.0093797
+    - -0.0042876
+    inertia:
+      ixx: 0.00013855
+      ixy: -5.4125e-06
+      ixz: -2.2157e-06
+      iyy: 0.00014667
+      iyz: 2.3407e-06
+      izz: 0.0001925
+  Link_RightArm5:
+    mass: 0.13033
+    com:
+    - 9.9116e-05
+    - -0.010028
+    - 0.2099
+    inertia:
+      ixx: 0.00020934
+      ixy: -1.5184e-08
+      ixz: 1.0991e-07
+      iyy: 0.00019643
+      iyz: 8.498e-07
+      izz: 8.2592e-05
+  Link_RightArm6:
+    mass: 0.060322
+    com:
+    - -3.6881e-05
+    - 0.012949
+    - 4.933e-05
+    inertia:
+      ixx: 2.0728e-05
+      ixy: -5.1213e-09
+      ixz: 3.5441e-08
+      iyy: 3.5531e-05
+      iyz: 7.5877e-09
+      izz: 2.0464e-05
+  Link_RightArm7:
+    mass: 0.11858
+    com:
+    - -0.016492
+    - 0.00054323
+    - 0.063454
+    inertia:
+      ixx: 4.9251e-05
+      ixy: 1.7605e-07
+      ixz: 4.4745e-08
+      iyy: 2.0098e-05
+      iyz: -3.7183e-07
+      izz: 6.0674e-05
+  Link_RightFinger1:
+    mass: 0.010871
+    com:
+    - -0.0035654
+    - 0.0037531
+    - -0.012482
+    inertia:
+      ixx: 2.0608e-06
+      ixy: -2.9069e-09
+      ixz: -6.5533e-08
+      iyy: 8.9733e-07
+      iyz: 6.3671e-08
+      izz: 1.5899e-06
+  Link_RightFinger2:
+    mass: 0.010871
+    com:
+    - -0.0035654
+    - 0.0037531
+    - -0.012482
+    inertia:
+      ixx: 2.0608e-06
+      ixy: -2.9069e-09
+      ixz: -6.5533e-08
+      iyy: 8.9733e-07
+      iyz: 6.3671e-08
+      izz: 1.5899e-06
+  Link_RightCameraSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_RadarSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_IMUSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_LFUltrasonicSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_RFUltrasonicSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_LBUltrasonicSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06
+  Link_RBUltrasonicSensor:
+    mass: 0.001
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 1.0e-06
+      ixy: 0.0
+      ixz: 0.0
+      iyy: 1.0e-06
+      iyz: 0.0
+      izz: 1.0e-06

@@ -1,0 +1,421 @@
+# 传感器位姿参数，逐传感器提取自展开后的 URDF。
+# 机器人: ylr1d
+# base_frame: Link_Base
+# mount.transform: T_{parent_link -> sensor} 常量变换
+# pose_base: 零位形下 T_{base_frame -> sensor}
+# chain: 若挂在 DH 链末端则为链名（left_arm/right_arm/body），否则空
+generated_by: xacro2dh
+robot: ylr1d
+source:
+  xacro: ..\urdf\ylr1d.xacro
+  config: ..\config
+base_frame: Link_Base
+convention_note: mount.transform 为常量 T_{parent_link -> sensor}（固定关节 origin）；pose_base 为零位形(q=0)下 T_{base_frame -> sensor}。挂在
+  DH 链末端(chain)的传感器，任意 q 下：T_Base^sensor(q) = T_Base^{chain_base}(q) · DH_FK(chain, q) · mount.transform，详见 kinematics.yaml
+  的链 FK。
+sensors:
+  global_rgb_camera:
+    type: camera
+    link: Link_GlobalCameraSensor
+    mount:
+      joint: Joint_Body4_to_GlobalCameraSensor
+      parent_link: Link_Body4
+      transform:
+        translation:
+        - 0.0566950000000047
+        - -0.0674999999999963
+        - 0.0
+        rotation_quat:
+        - 0.7064927075082305
+        - 4.4320281746236065e-05
+        - 4.439729329697248e-05
+        - 0.7077203192662218
+    chain: body
+    pose_base:
+      translation:
+      - -0.1796950000000262
+      - -6.631730280882404e-14
+      - 0.8807999999999343
+      rotation_quat:
+      - 6.273279892297431e-05
+      - 0.0008680525987418801
+      - -0.9999996212745677
+      - 5.4455971351129986e-08
+  global_depth_camera:
+    type: depth
+    link: Link_GlobalCameraSensor
+    mount:
+      joint: Joint_Body4_to_GlobalCameraSensor
+      parent_link: Link_Body4
+      transform:
+        translation:
+        - 0.0566950000000047
+        - -0.0674999999999963
+        - 0.0
+        rotation_quat:
+        - 0.7064927075082305
+        - 4.4320281746236065e-05
+        - 4.439729329697248e-05
+        - 0.7077203192662218
+    chain: body
+    pose_base:
+      translation:
+      - -0.1796950000000262
+      - -6.631730280882404e-14
+      - 0.8807999999999343
+      rotation_quat:
+      - 6.273279892297431e-05
+      - 0.0008680525987418801
+      - -0.9999996212745677
+      - 5.4455971351129986e-08
+  global_infrared_camera:
+    type: camera
+    link: Link_GlobalCameraSensor
+    mount:
+      joint: Joint_Body4_to_GlobalCameraSensor
+      parent_link: Link_Body4
+      transform:
+        translation:
+        - 0.0566950000000047
+        - -0.0674999999999963
+        - 0.0
+        rotation_quat:
+        - 0.7064927075082305
+        - 4.4320281746236065e-05
+        - 4.439729329697248e-05
+        - 0.7077203192662218
+    chain: body
+    pose_base:
+      translation:
+      - -0.1796950000000262
+      - -6.631730280882404e-14
+      - 0.8807999999999343
+      rotation_quat:
+      - 6.273279892297431e-05
+      - 0.0008680525987418801
+      - -0.9999996212745677
+      - 5.4455971351129986e-08
+  left_rgb_camera:
+    type: camera
+    link: Link_LeftCameraSensor
+    mount:
+      joint: Joint_LeftArm7_to_LeftCameraSensor
+      parent_link: Link_LeftArm7
+      transform:
+        translation:
+        - -0.041999
+        - 0.00025491
+        - 0.08155
+        rotation_quat:
+        - 0.4965559997714695
+        - -0.5003972911439953
+        - 0.49958385517406373
+        - 0.5034388361619792
+    chain: left_arm
+    pose_base:
+      translation:
+      - -0.4745498221263546
+      - -0.47799899999379997
+      - 0.6595450900000179
+      rotation_quat:
+      - -0.0030347002102110027
+      - -0.0038481361802250773
+      - 0.9999879911257541
+      - 6.844809510054645e-06
+  left_depth_camera:
+    type: depth
+    link: Link_LeftCameraSensor
+    mount:
+      joint: Joint_LeftArm7_to_LeftCameraSensor
+      parent_link: Link_LeftArm7
+      transform:
+        translation:
+        - -0.041999
+        - 0.00025491
+        - 0.08155
+        rotation_quat:
+        - 0.4965559997714695
+        - -0.5003972911439953
+        - 0.49958385517406373
+        - 0.5034388361619792
+    chain: left_arm
+    pose_base:
+      translation:
+      - -0.4745498221263546
+      - -0.47799899999379997
+      - 0.6595450900000179
+      rotation_quat:
+      - -0.0030347002102110027
+      - -0.0038481361802250773
+      - 0.9999879911257541
+      - 6.844809510054645e-06
+  left_infrared_camera:
+    type: camera
+    link: Link_LeftCameraSensor
+    mount:
+      joint: Joint_LeftArm7_to_LeftCameraSensor
+      parent_link: Link_LeftArm7
+      transform:
+        translation:
+        - -0.041999
+        - 0.00025491
+        - 0.08155
+        rotation_quat:
+        - 0.4965559997714695
+        - -0.5003972911439953
+        - 0.49958385517406373
+        - 0.5034388361619792
+    chain: left_arm
+    pose_base:
+      translation:
+      - -0.4745498221263546
+      - -0.47799899999379997
+      - 0.6595450900000179
+      rotation_quat:
+      - -0.0030347002102110027
+      - -0.0038481361802250773
+      - 0.9999879911257541
+      - 6.844809510054645e-06
+  right_rgb_camera:
+    type: camera
+    link: Link_RightCameraSensor
+    mount:
+      joint: Joint_RightArm7_to_RightCameraSensor
+      parent_link: Link_RightArm7
+      transform:
+        translation:
+        - -0.0419992264026258
+        - 0.000254914269492257
+        - 0.0815499999909122
+        rotation_quat:
+        - -0.5030346939555269
+        - -0.4999907905477823
+        - -0.4999907905477823
+        - 0.49696530604447325
+    chain: right_arm
+    pose_base:
+      translation:
+      - -0.47454982212674335
+      - 0.47799922638016235
+      - 0.6600549142694482
+      rotation_quat:
+      - -0.003034693955215549
+      - 0.003034693955521232
+      - -0.9999907905477833
+      - 9.209454035365131e-06
+  right_depth_camera:
+    type: depth
+    link: Link_RightCameraSensor
+    mount:
+      joint: Joint_RightArm7_to_RightCameraSensor
+      parent_link: Link_RightArm7
+      transform:
+        translation:
+        - -0.0419992264026258
+        - 0.000254914269492257
+        - 0.0815499999909122
+        rotation_quat:
+        - -0.5030346939555269
+        - -0.4999907905477823
+        - -0.4999907905477823
+        - 0.49696530604447325
+    chain: right_arm
+    pose_base:
+      translation:
+      - -0.47454982212674335
+      - 0.47799922638016235
+      - 0.6600549142694482
+      rotation_quat:
+      - -0.003034693955215549
+      - 0.003034693955521232
+      - -0.9999907905477833
+      - 9.209454035365131e-06
+  right_infrared_camera:
+    type: camera
+    link: Link_RightCameraSensor
+    mount:
+      joint: Joint_RightArm7_to_RightCameraSensor
+      parent_link: Link_RightArm7
+      transform:
+        translation:
+        - -0.0419992264026258
+        - 0.000254914269492257
+        - 0.0815499999909122
+        rotation_quat:
+        - -0.5030346939555269
+        - -0.4999907905477823
+        - -0.4999907905477823
+        - 0.49696530604447325
+    chain: right_arm
+    pose_base:
+      translation:
+      - -0.47454982212674335
+      - 0.47799922638016235
+      - 0.6600549142694482
+      rotation_quat:
+      - -0.003034693955215549
+      - 0.003034693955521232
+      - -0.9999907905477833
+      - 9.209454035365131e-06
+  radar_sensor:
+    type: ray
+    link: Link_RadarSensor
+    mount:
+      joint: Joint_Base_to_RadarSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - -0.237
+        - 0.0
+        - 0.2364
+        rotation_quat:
+        - -0.0
+        - -0.0
+        - -0.9962095119860895
+        - 0.08698625310034529
+    chain: null
+    pose_base:
+      translation:
+      - -0.237
+      - 0.0
+      - 0.2364
+      rotation_quat:
+      - -0.0
+      - -0.0
+      - -0.9962095119860895
+      - 0.08698625310034529
+  imu_sensor:
+    type: imu
+    link: Link_IMUSensor
+    mount:
+      joint: Joint_Base_to_IMUSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - 0.1103
+        - 0.00033738
+        - 0.285
+        rotation_quat:
+        - -0.0
+        - -0.0
+        - -0.9999994526001691
+        - 0.0010463266039769299
+    chain: null
+    pose_base:
+      translation:
+      - 0.1103
+      - 0.00033738
+      - 0.285
+      rotation_quat:
+      - -0.0
+      - -0.0
+      - -0.9999994526001691
+      - 0.0010463266039769299
+  lf_ultrasonic_sensor:
+    type: ray
+    link: Link_LFUltrasonicSensor
+    mount:
+      joint: Joint_Base_to_LFUltrasonicSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - -0.26708
+        - -0.18708
+        - 0.183
+        rotation_quat:
+        - 0.27059674732172284
+        - -0.6532834277260181
+        - -0.6532810280864046
+        - 0.27059575336619507
+    chain: null
+    pose_base:
+      translation:
+      - -0.26708
+      - -0.18708
+      - 0.183
+      rotation_quat:
+      - 0.27059674732172284
+      - -0.6532834277260181
+      - -0.6532810280864046
+      - 0.27059575336619507
+  rf_ultrasonic_sensor:
+    type: ray
+    link: Link_RFUltrasonicSensor
+    mount:
+      joint: Joint_Base_to_RFUltrasonicSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - -0.26708
+        - 0.18708
+        - 0.183
+        rotation_quat:
+        - 0.27059674732172284
+        - 0.6532834277260181
+        - 0.6532810280864046
+        - 0.27059575336619507
+    chain: null
+    pose_base:
+      translation:
+      - -0.26708
+      - 0.18708
+      - 0.183
+      rotation_quat:
+      - 0.27059674732172284
+      - 0.6532834277260181
+      - 0.6532810280864046
+      - 0.27059575336619507
+  lb_ultrasonic_sensor:
+    type: ray
+    link: Link_LBUltrasonicSensor
+    mount:
+      joint: Joint_Base_to_LBUltrasonicSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - 0.26708
+        - -0.18708
+        - 0.183
+        rotation_quat:
+        - 0.6532824337642577
+        - -0.2705991469639179
+        - -0.27059815299957585
+        - 0.6532800341282953
+    chain: null
+    pose_base:
+      translation:
+      - 0.26708
+      - -0.18708
+      - 0.183
+      rotation_quat:
+      - 0.6532824337642577
+      - -0.2705991469639179
+      - -0.27059815299957585
+      - 0.6532800341282953
+  rb_ultrasonic_sensor:
+    type: ray
+    link: Link_RBUltrasonicSensor
+    mount:
+      joint: Joint_Base_to_RBUltrasonicSensor
+      parent_link: Link_Base
+      transform:
+        translation:
+        - 0.26708
+        - 0.18708
+        - 0.183
+        rotation_quat:
+        - 0.6532824337642577
+        - 0.2705991469639179
+        - 0.27059815299957585
+        - 0.6532800341282953
+    chain: null
+    pose_base:
+      translation:
+      - 0.26708
+      - 0.18708
+      - 0.183
+      rotation_quat:
+      - 0.6532824337642577
+      - 0.2705991469639179
+      - 0.27059815299957585
+      - 0.6532800341282953

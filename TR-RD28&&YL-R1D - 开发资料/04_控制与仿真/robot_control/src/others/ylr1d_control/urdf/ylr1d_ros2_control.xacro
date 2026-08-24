@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="ylr1d_control_fragment">
+
+  <!-- =========================================================
+       ros2_control hardware interface definition for ylr1d
+
+       This file is merged into the base robot URDF at launch
+       time to enable Gazebo → ros2_control bridging.
+
+       Usage from launch file:
+         xacro.process_file(path, mappings={"controllers_yaml": "/path/to/ylr1d_controllers.yaml"})
+
+       Joint classification (30 controllable joints):
+         • 4× steering    – position command
+         • 4× drive       – velocity command
+         • 4× body        – position command
+         • 7× left arm    – position command
+         • 7× right arm   – position command
+         • 2× left gripper – position command
+         • 2× right gripper – position command
+       ========================================================= -->
+
+
+  <ros2_control name="ylr1d_hardware" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+
+    <!-- ── Steering (position) ─────────────────────────────── -->
+    <joint name="Joint_Base_to_RFWheelF">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Base_to_LFWheelF">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Base_to_RBWheelF">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Base_to_LBWheelF">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Drive (velocity) ────────────────────────────────── -->
+    <joint name="Joint_RFWheelF_to_RFWheel">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LFWheelF_to_LFWheel">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RBWheelF_to_RBWheel">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LBWheelF_to_LBWheel">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Body lift & waist (position) ────────────────────── -->
+    <joint name="Joint_Base_to_Body1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Body1_to_Body2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Body2_to_Body3">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_Body3_to_Body4">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Left arm (position) ─────────────────────────────── -->
+    <joint name="Joint_Body2_to_LeftArm1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm1_to_LeftArm2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm2_to_LeftArm3">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm3_to_LeftArm4">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm4_to_LeftArm5">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm5_to_LeftArm6">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm6_to_LeftArm7">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Left gripper (position) ─────────────────────────── -->
+    <joint name="Joint_LeftArm7_to_LeftFinger1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_LeftArm7_to_LeftFinger2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Right arm (position) ────────────────────────────── -->
+    <joint name="Joint_Body2_RightArm1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm1_to_RightArm2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm2_to_RightArm3">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm3_to_RightArm4">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm4_to_RightArm5">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm5_to_RightArm6">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm6_to_RightArm7">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <!-- ── Right gripper (position) ────────────────────────── -->
+    <joint name="Joint_RightArm7_to_RightFinger1">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="Joint_RightArm7_to_RightFinger2">
+      <command_interface name="effort"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <!-- ── Gazebo joint properties ───────────────────────────
+       Provides passive stiffness (kp) and damping (kd) so the
+       robot doesn't collapse under gravity before controllers
+       activate.  initial_joint_position tells Gazebo where
+       each joint starts.                                     -->
+  <!-- Steering -->
+  <gazebo reference="Joint_Base_to_RFWheelF">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Base_to_LFWheelF">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Base_to_RBWheelF">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Base_to_LBWheelF">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+
+  <!-- Drive wheels (velocity-controlled → lighter stiffness) -->
+  <gazebo reference="Joint_RFWheelF_to_RFWheel">
+    <initial_joint_position>0.0</initial_joint_position><kp>100.0</kp><kd>5.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LFWheelF_to_LFWheel">
+    <initial_joint_position>0.0</initial_joint_position><kp>100.0</kp><kd>5.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RBWheelF_to_RBWheel">
+    <initial_joint_position>0.0</initial_joint_position><kp>100.0</kp><kd>5.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LBWheelF_to_LBWheel">
+    <initial_joint_position>0.0</initial_joint_position><kp>100.0</kp><kd>5.0</kd>
+  </gazebo>
+
+  <!-- Body lift (prismatic — must hold the entire upper body) -->
+  <gazebo reference="Joint_Base_to_Body1">
+    <initial_joint_position>0.0</initial_joint_position><kp>5000.0</kp><kd>50.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Body1_to_Body2">
+    <initial_joint_position>0.0</initial_joint_position><kp>4000.0</kp><kd>40.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Body2_to_Body3">
+    <initial_joint_position>0.0</initial_joint_position><kp>4000.0</kp><kd>40.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_Body3_to_Body4">
+    <initial_joint_position>0.0</initial_joint_position><kp>4000.0</kp><kd>40.0</kd>
+  </gazebo>
+
+  <!-- Left arm (7-DOF — increased stiffness for gravity holding) -->
+  <gazebo reference="Joint_Body2_to_LeftArm1">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm1_to_LeftArm2">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm2_to_LeftArm3">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm3_to_LeftArm4">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm4_to_LeftArm5">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm5_to_LeftArm6">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm6_to_LeftArm7">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+
+  <!-- Left gripper -->
+  <gazebo reference="Joint_LeftArm7_to_LeftFinger1">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_LeftArm7_to_LeftFinger2">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+
+  <!-- Right arm (7-DOF — increased stiffness for gravity holding) -->
+  <gazebo reference="Joint_Body2_RightArm1">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm1_to_RightArm2">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm2_to_RightArm3">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm3_to_RightArm4">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm4_to_RightArm5">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm5_to_RightArm6">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm6_to_RightArm7">
+    <initial_joint_position>0.0</initial_joint_position><kp>8000.0</kp><kd>80.0</kd>
+  </gazebo>
+
+  <!-- Right gripper -->
+  <gazebo reference="Joint_RightArm7_to_RightFinger1">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+  <gazebo reference="Joint_RightArm7_to_RightFinger2">
+    <initial_joint_position>0.0</initial_joint_position><kp>1000.0</kp><kd>10.0</kd>
+  </gazebo>
+
+  <!-- Custom Gazebo plugin: subscribes to /pid_controller/commands and
+       applies efforts directly to joints. Also publishes /joint_states. -->
+  <gazebo>
+    <plugin filename="libylr1d_joint_effort_plugin.so" name="ylr1d_joint_effort_plugin"/>
+  </gazebo>
+
+</robot>

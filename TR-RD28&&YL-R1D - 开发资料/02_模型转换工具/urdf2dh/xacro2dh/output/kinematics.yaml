@@ -1,0 +1,305 @@
+# 运动学参数（标准 DH）。
+# 机器人: ylr1d
+# base_transform: URDF base_link 系 -> DH 第0帧 的常量变换
+# tool_transform: DH 第 n 帧 -> end_link 系 的常量变换
+# revolute/continuous 关节 q 作用于 theta；prismatic 关节 q 作用于 d。
+generated_by: xacro2dh
+robot: ylr1d
+source:
+  xacro: ..\urdf\ylr1d.xacro
+  config: ..\config
+convention: standard_dh
+convention_note: 标准DH(Craig)：A_i = Rz(theta)·Tz(d)·Tx(a)·Rx(alpha)，x_i 为 z_{i-1}->z_i 的公垂线。theta_offset 为 q=0 时取值。FK = base_transform
+  · Π A_i(q) · tool_transform，与 URDF 正运动学逐点一致（见测试）。
+chains:
+  left_arm:
+    base_link: Link_Body2
+    end_link: Link_LeftArm7
+    joints:
+    - Joint_Body2_to_LeftArm1
+    - Joint_LeftArm1_to_LeftArm2
+    - Joint_LeftArm2_to_LeftArm3
+    - Joint_LeftArm3_to_LeftArm4
+    - Joint_LeftArm4_to_LeftArm5
+    - Joint_LeftArm5_to_LeftArm6
+    - Joint_LeftArm6_to_LeftArm7
+    base_transform:
+      translation:
+      - 2.3528996706953932e-15
+      - 0.174999999999813
+      - 0.13379999999999417
+      rotation_quat:
+      - 5.578088954947339e-31
+      - 0.7071067811865451
+      - 0.7071067811865499
+      - 9.50715035772623e-15
+    tool_transform:
+      translation:
+      - 0.0
+      - 2.7755575615628914e-17
+      - 5.551115123125783e-17
+      rotation_quat:
+      - 0.0
+      - 0.0
+      - 7.888609052210118e-31
+      - 1.0
+    dh_table:
+    - joint: Joint_Body2_to_LeftArm1
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267949234
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 2.83
+    - joint: Joint_LeftArm1_to_LeftArm2
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267948966
+      d: 0.0
+      theta_offset: -3.141592653589793
+      limit:
+        lower: -1.83
+        upper: 1.83
+        effort: 1000.0
+        velocity: 2.83
+    - joint: Joint_LeftArm2_to_LeftArm3
+      type: revolute
+      a: 0.0149998221270141
+      alpha: -1.5707963267948966
+      d: 0.245999999998857
+      theta_offset: 4.92385425102789e-16
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_LeftArm3_to_LeftArm4
+      type: revolute
+      a: 0.014999999996328783
+      alpha: -1.5707963267948932
+      d: 0.0
+      theta_offset: -1.5707963267914913
+      limit:
+        lower: -1.57
+        upper: 1.57
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_LeftArm4_to_LeftArm5
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267948932
+      d: 0.2649999999991179
+      theta_offset: 3.700743465691394e-16
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_LeftArm5_to_LeftArm6
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267950533
+      d: 0.0
+      theta_offset: -3.14159265358957
+      limit:
+        lower: -2.09
+        upper: 2.09
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_LeftArm6_to_LeftArm7
+      type: revolute
+      a: 0.0
+      alpha: 0.0
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -6.28
+        upper: 6.28
+        effort: 1000.0
+        velocity: 5.65
+  right_arm:
+    base_link: Link_Body2
+    end_link: Link_RightArm7
+    joints:
+    - Joint_Body2_to_RightArm1
+    - Joint_RightArm1_to_RightArm2
+    - Joint_RightArm2_to_RightArm3
+    - Joint_RightArm3_to_RightArm4
+    - Joint_RightArm4_to_RightArm5
+    - Joint_RightArm5_to_RightArm6
+    - Joint_RightArm6_to_RightArm7
+    base_transform:
+      translation:
+      - 0.0
+      - -0.175000000002386
+      - 0.1337999999999964
+      rotation_quat:
+      - -0.7071067811865462
+      - 0.0
+      - 0.0
+      - 0.7071067811865488
+    tool_transform:
+      translation:
+      - 0.0
+      - 0.0
+      - 0.0
+      rotation_quat:
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+    dh_table:
+    - joint: Joint_Body2_to_RightArm1
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267948932
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 2.83
+    - joint: Joint_RightArm1_to_RightArm2
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267948932
+      d: 0.0
+      theta_offset: 3.141592653589793
+      limit:
+        lower: -1.83
+        upper: 1.83
+        effort: 1000.0
+        velocity: 2.83
+    - joint: Joint_RightArm2_to_RightArm3
+      type: revolute
+      a: 0.0149998221395796
+      alpha: 1.5707963267948932
+      d: -0.245999999980808
+      theta_offset: 3.141592653589793
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_RightArm3_to_RightArm4
+      type: revolute
+      a: 0.014999999995540081
+      alpha: 1.5707963267948932
+      d: 0.0
+      theta_offset: -1.57079632679151
+      limit:
+        lower: -1.57
+        upper: 1.57
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_RightArm4_to_RightArm5
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267948932
+      d: -0.2649999999960232
+      theta_offset: -3.141592653589793
+      limit:
+        lower: -2.62
+        upper: 2.62
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_RightArm5_to_RightArm6
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267942633
+      d: 0.0
+      theta_offset: -3.14159265358956
+      limit:
+        lower: -2.09
+        upper: 2.09
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_RightArm6_to_RightArm7
+      type: revolute
+      a: 0.0
+      alpha: 3.141592653589793
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -6.28
+        upper: 6.28
+        effort: 1000.0
+        velocity: 5.65
+  body:
+    base_link: Link_Base
+    end_link: Link_Body4
+    joints:
+    - Joint_Base_to_Body1
+    - Joint_Body1_to_Body2
+    - Joint_Body2_to_Body3
+    - Joint_Body3_to_Body4
+    base_transform:
+      translation:
+      - -0.113000000000019
+      - 0.0
+      - 0.526000000000013
+      rotation_quat:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 1.0
+    tool_transform:
+      translation:
+      - 0.0
+      - 0.0
+      - 0.0
+      rotation_quat:
+      - 0.0
+      - 0.0
+      - 1.0
+      - 0.0
+    dh_table:
+    - joint: Joint_Base_to_Body1
+      type: prismatic
+      a: 0.0
+      alpha: 0.0
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -0.3
+        upper: 0.3
+        effort: 1000.0
+        velocity: 67.82
+    - joint: Joint_Body1_to_Body2
+      type: revolute
+      a: 0.010000000000002507
+      alpha: 0.0
+      d: 0.23729999999999496
+      theta_offset: -3.14159265358978
+      limit:
+        lower: -3.14
+        upper: 3.14
+        effort: 1000.0
+        velocity: 2.83
+    - joint: Joint_Body2_to_Body3
+      type: revolute
+      a: 0.0
+      alpha: 1.5707963267949
+      d: 0.04999999999992999
+      theta_offset: -3.1415926535886434
+      limit:
+        lower: -1.57
+        upper: 1.57
+        effort: 1000.0
+        velocity: 5.65
+    - joint: Joint_Body3_to_Body4
+      type: revolute
+      a: 0.0
+      alpha: 0.0
+      d: 0.0
+      theta_offset: 0.0
+      limit:
+        lower: -1.57
+        upper: 1.57
+        effort: 1000.0
+        velocity: 5.65

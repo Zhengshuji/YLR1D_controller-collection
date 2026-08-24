@@ -1,0 +1,239 @@
+# ============================================================================
+# Manual Sensor Descriptions
+# ============================================================================
+# 本文件是传感器的手动描述配置，用户可在此定义每个 Link_*Sensor 上的传感器。
+#
+# 规则:
+# 1. 每条描述对应一个单一功能传感器（复合传感器拆分为多条）
+# 2. 多条描述对应同一个 link_name 时，pipeline 自动合并为同一 <gazebo> 下的多个 <sensor>
+# 3. 参数格式贴近 Gazebo SDF 规范
+# 4. 未指定的参数将被 pipeline 自动填充硬编码默认值
+# 5. 来源于传感器规格书: 传感器默认配置.txt
+# ============================================================================
+
+sensors:
+
+  # --------------------------------------------------------------------------
+  # GlobalCameraSensor — 全局相机（复合：RGB + 深度 + 红外）
+  # Camera 规格: RGB最大分辨率1920x1080, 深度最大分辨率640x480, 深度工作范围0.2-4m
+  # --------------------------------------------------------------------------
+  - link_name: Link_GlobalCameraSensor
+    sensor_type: camera
+    sensor_name: rgb_camera
+    update_rate: 30
+    topic: /global_camera/rgb/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 1920
+        height: 1080
+      clip:
+        near: 0.1
+        far: 100.0
+
+  - link_name: Link_GlobalCameraSensor
+    sensor_type: depth
+    sensor_name: depth_camera
+    update_rate: 30
+    topic: /global_camera/depth/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.2
+        far: 4.0
+
+  - link_name: Link_GlobalCameraSensor
+    sensor_type: camera
+    sensor_name: infrared_camera
+    update_rate: 15
+    topic: /global_camera/infrared/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.1
+        far: 10.0
+
+  # --------------------------------------------------------------------------
+  # LeftCameraSensor — 左侧相机（复合：RGB + 深度 + 红外）
+  # --------------------------------------------------------------------------
+  - link_name: Link_LeftCameraSensor
+    sensor_type: camera
+    sensor_name: rgb_camera
+    update_rate: 30
+    topic: /left_camera/rgb/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 1920
+        height: 1080
+      clip:
+        near: 0.1
+        far: 100.0
+
+  - link_name: Link_LeftCameraSensor
+    sensor_type: depth
+    sensor_name: depth_camera
+    update_rate: 30
+    topic: /left_camera/depth/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.2
+        far: 4.0
+
+  - link_name: Link_LeftCameraSensor
+    sensor_type: camera
+    sensor_name: infrared_camera
+    update_rate: 15
+    topic: /left_camera/infrared/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.1
+        far: 10.0
+
+  # --------------------------------------------------------------------------
+  # RightCameraSensor — 右侧相机（复合：RGB + 深度 + 红外）
+  # --------------------------------------------------------------------------
+  - link_name: Link_RightCameraSensor
+    sensor_type: camera
+    sensor_name: rgb_camera
+    update_rate: 30
+    topic: /right_camera/rgb/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 1920
+        height: 1080
+      clip:
+        near: 0.1
+        far: 100.0
+
+  - link_name: Link_RightCameraSensor
+    sensor_type: depth
+    sensor_name: depth_camera
+    update_rate: 30
+    topic: /right_camera/depth/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.2
+        far: 4.0
+
+  - link_name: Link_RightCameraSensor
+    sensor_type: camera
+    sensor_name: infrared_camera
+    update_rate: 15
+    topic: /right_camera/infrared/image_raw
+    camera:
+      horizontal_fov: 1.047
+      image:
+        width: 640
+        height: 480
+      clip:
+        near: 0.1
+        far: 10.0
+
+  # --------------------------------------------------------------------------
+  # RadarSensor — 雷达/激光雷达
+  # 规格: 测距半径30m、测距频率20000Hz、扫描频率12Hz、角度分辨率0.13°
+  # 计算: 360° / 0.13° ≈ 2770 samples
+  # --------------------------------------------------------------------------
+  - link_name: Link_RadarSensor
+    sensor_type: ray
+    sensor_name: radar_sensor
+    update_rate: 12
+    topic: /radar/scan
+    ray:
+      scan:
+        horizontal:
+          samples: 2770
+          resolution: 1
+          min_angle: -3.14159
+          max_angle: 3.14159
+      range:
+        min: 0.1
+        max: 30.0
+        resolution: 0.01
+    # 测距频率20000Hz — 通过 Gazebo <ray> 的 <scan> 频率参数间接控制
+    # 实际由 update_rate(12Hz 扫描帧率) 和 samples(2770 每帧点数) 共同决定
+
+  # --------------------------------------------------------------------------
+  # IMUSensor — 惯性测量单元
+  # 规格: 3轴加速度计 + 3轴陀螺仪, 数据带宽116Hz
+  # 加速度计零偏不稳定性0.028mg (≈ 0.000274 m/s²)
+  # 陀螺仪零偏不稳定性2.5°/h (≈ 0.000694 rad/s)
+  # --------------------------------------------------------------------------
+  - link_name: Link_IMUSensor
+    sensor_type: imu
+    sensor_name: imu_sensor
+    update_rate: 116
+    topic: /imu_data
+
+  # --------------------------------------------------------------------------
+  # LFUltrasonicSensor — 左前超声波探头
+  # 规格: 分辨率1mm, 量程25-450cm, 最大测量角度60°
+  # --------------------------------------------------------------------------
+  - link_name: Link_LFUltrasonicSensor
+    sensor_type: sonar
+    sensor_name: lf_ultrasonic_sensor
+    update_rate: 20
+    topic: /lf_ultrasonic/range
+    sonar:
+      min: 0.25
+      max: 4.5
+      radius: 0.5236
+
+  # --------------------------------------------------------------------------
+  # RFUltrasonicSensor — 右前超声波探头
+  # --------------------------------------------------------------------------
+  - link_name: Link_RFUltrasonicSensor
+    sensor_type: sonar
+    sensor_name: rf_ultrasonic_sensor
+    update_rate: 20
+    topic: /rf_ultrasonic/range
+    sonar:
+      min: 0.25
+      max: 4.5
+      radius: 0.5236
+
+  # --------------------------------------------------------------------------
+  # LBUltrasonicSensor — 左后超声波探头
+  # --------------------------------------------------------------------------
+  - link_name: Link_LBUltrasonicSensor
+    sensor_type: sonar
+    sensor_name: lb_ultrasonic_sensor
+    update_rate: 20
+    topic: /lb_ultrasonic/range
+    sonar:
+      min: 0.25
+      max: 4.5
+      radius: 0.5236
+
+  # --------------------------------------------------------------------------
+  # RBUltrasonicSensor — 右后超声波探头
+  # --------------------------------------------------------------------------
+  - link_name: Link_RBUltrasonicSensor
+    sensor_type: sonar
+    sensor_name: rb_ultrasonic_sensor
+    update_rate: 20
+    topic: /rb_ultrasonic/range
+    sonar:
+      min: 0.25
+      max: 4.5
+      radius: 0.5236

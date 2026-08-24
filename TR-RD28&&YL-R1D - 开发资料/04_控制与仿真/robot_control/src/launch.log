@@ -1,0 +1,162 @@
+[INFO] [launch]: All log files can be found below /home/zsj/.ros/log/2026-07-28-16-16-52-303369-Zhuxingjie-1840
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [robot_state_publisher-1]: process started with pid [1848]
+[INFO] [gazebo-2]: process started with pid [1850]
+[INFO] [rviz2-3]: process started with pid [1852]
+[robot_state_publisher-1] [WARN] [1785226612.847665786] [kdl_parser]: The root link Link_Base has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF.
+[robot_state_publisher-1] [INFO] [1785226612.848487314] [robot_state_publisher]: got segment Link_Base
+[robot_state_publisher-1] [INFO] [1785226612.848646465] [robot_state_publisher]: got segment Link_Body1
+[robot_state_publisher-1] [INFO] [1785226612.848658685] [robot_state_publisher]: got segment Link_Body2
+[robot_state_publisher-1] [INFO] [1785226612.848663916] [robot_state_publisher]: got segment Link_Body3
+[robot_state_publisher-1] [INFO] [1785226612.848668489] [robot_state_publisher]: got segment Link_Body4
+[robot_state_publisher-1] [INFO] [1785226612.848672533] [robot_state_publisher]: got segment Link_GlobalCameraSensor
+[robot_state_publisher-1] [INFO] [1785226612.848677264] [robot_state_publisher]: got segment Link_IMUSensor
+[robot_state_publisher-1] [INFO] [1785226612.848681719] [robot_state_publisher]: got segment Link_LBUltrasonicSensor
+[robot_state_publisher-1] [INFO] [1785226612.848686172] [robot_state_publisher]: got segment Link_LBWheel
+[robot_state_publisher-1] [INFO] [1785226612.848690502] [robot_state_publisher]: got segment Link_LBWheelF
+[robot_state_publisher-1] [INFO] [1785226612.848694534] [robot_state_publisher]: got segment Link_LFUltrasonicSensor
+[robot_state_publisher-1] [INFO] [1785226612.848698800] [robot_state_publisher]: got segment Link_LFWheel
+[robot_state_publisher-1] [INFO] [1785226612.848702980] [robot_state_publisher]: got segment Link_LFWheelF
+[robot_state_publisher-1] [INFO] [1785226612.848706993] [robot_state_publisher]: got segment Link_LeftArm1
+[robot_state_publisher-1] [INFO] [1785226612.848711080] [robot_state_publisher]: got segment Link_LeftArm2
+[robot_state_publisher-1] [INFO] [1785226612.848715114] [robot_state_publisher]: got segment Link_LeftArm3
+[robot_state_publisher-1] [INFO] [1785226612.848719027] [robot_state_publisher]: got segment Link_LeftArm4
+[robot_state_publisher-1] [INFO] [1785226612.848722981] [robot_state_publisher]: got segment Link_LeftArm5
+[robot_state_publisher-1] [INFO] [1785226612.848726911] [robot_state_publisher]: got segment Link_LeftArm6
+[robot_state_publisher-1] [INFO] [1785226612.848730933] [robot_state_publisher]: got segment Link_LeftArm7
+[robot_state_publisher-1] [INFO] [1785226612.848734880] [robot_state_publisher]: got segment Link_LeftCameraSensor
+[robot_state_publisher-1] [INFO] [1785226612.848739057] [robot_state_publisher]: got segment Link_LeftFinger1
+[robot_state_publisher-1] [INFO] [1785226612.848743194] [robot_state_publisher]: got segment Link_LeftFinger2
+[robot_state_publisher-1] [INFO] [1785226612.848747276] [robot_state_publisher]: got segment Link_RBUltrasonicSensor
+[robot_state_publisher-1] [INFO] [1785226612.848751405] [robot_state_publisher]: got segment Link_RBWheel
+[robot_state_publisher-1] [INFO] [1785226612.848755558] [robot_state_publisher]: got segment Link_RBWheelF
+[robot_state_publisher-1] [INFO] [1785226612.848759508] [robot_state_publisher]: got segment Link_RFUltrasonicSensor
+[robot_state_publisher-1] [INFO] [1785226612.848763619] [robot_state_publisher]: got segment Link_RFWheel
+[robot_state_publisher-1] [INFO] [1785226612.848767640] [robot_state_publisher]: got segment Link_RFWheelF
+[robot_state_publisher-1] [INFO] [1785226612.848771620] [robot_state_publisher]: got segment Link_RadarSensor
+[robot_state_publisher-1] [INFO] [1785226612.848775665] [robot_state_publisher]: got segment Link_RightArm1
+[robot_state_publisher-1] [INFO] [1785226612.848779747] [robot_state_publisher]: got segment Link_RightArm2
+[robot_state_publisher-1] [INFO] [1785226612.848783832] [robot_state_publisher]: got segment Link_RightArm3
+[robot_state_publisher-1] [INFO] [1785226612.848787849] [robot_state_publisher]: got segment Link_RightArm4
+[robot_state_publisher-1] [INFO] [1785226612.848791794] [robot_state_publisher]: got segment Link_RightArm5
+[robot_state_publisher-1] [INFO] [1785226612.848795739] [robot_state_publisher]: got segment Link_RightArm6
+[robot_state_publisher-1] [INFO] [1785226612.848799620] [robot_state_publisher]: got segment Link_RightArm7
+[robot_state_publisher-1] [INFO] [1785226612.848803523] [robot_state_publisher]: got segment Link_RightCameraSensor
+[robot_state_publisher-1] [INFO] [1785226612.848807777] [robot_state_publisher]: got segment Link_RightFinger1
+[robot_state_publisher-1] [INFO] [1785226612.848811899] [robot_state_publisher]: got segment Link_RightFinger2
+[gazebo-2] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-2] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-2] Released under the Apache 2 License.
+[gazebo-2] http://gazebosim.org
+[gazebo-2] 
+[gazebo-2] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-2] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-2] Released under the Apache 2 License.
+[gazebo-2] http://gazebosim.org
+[gazebo-2] 
+[rviz2-3] [INFO] [1785226613.782517799] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1785226613.782867562] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[rviz2-3] [INFO] [1785226613.934839955] [rviz2]: Stereo is NOT SUPPORTED
+[gazebo-2] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gazebo-2] #     # ####### ####### ###  #####  #######
+[gazebo-2] ##    # #     #    #     #  #     # #
+[gazebo-2] # #   # #     #    #     #  #       #
+[gazebo-2] #  #  # #     #    #     #  #       #####
+[gazebo-2] #   # # #     #    #     #  #       #
+[gazebo-2] #    ## #     #    #     #  #     # #
+[gazebo-2] #     # #######    #    ###  #####  #######
+[gazebo-2] 
+[gazebo-2] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gazebo-2] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gazebo-2] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gazebo-2] 
+[gazebo-2] [0m[1;33m
+[gazebo-2] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.255.255.254[0m[1;32m
+[gazebo-2] [0m[1;33m[0m[1;33m[0m[1;33m[Wrn] [FuelModelDatabase.cc:313] [0m[1;33mURI not supported by Fuel [[0m[1;33m--ros-args[0m[1;33m][0m[1;33m
+[gazebo-2] [0m[1;33m[0m[1;33m[0m[1;33m[Wrn] [SystemPaths.cc:459] [0m[1;33mFile or path does not exist [[0m[1;33m""[0m[1;33m] [[0m[1;33m--ros-args[0m[1;33m][0m[1;33m
+[gazebo-2] [0m[1;33m[0m[1;33m[0m[1;31m[Err] [Server.cc:472] [0m[1;31mCould not open file[[0m[1;31m--ros-args[0m[1;31m]
+[gazebo-2] [0m[1;33m[Wrn] [Server.cc:381] [0m[1;33mFalling back on worlds/empty.world
+[INFO] [spawn_entity.py-4]: process started with pid [2156]
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.255.255.254[0m[1;32m
+[gazebo-2] [0m[1;31m[Err] [InsertModelWidget.cc:403] [0m[1;31mMissing [0m[1;31mmodel.config[0m[1;31m for model [0m[1;31m"/home/zsj/WorkSpace/test_ylr1d/src/ylr1d_mid_control"[0m[1;31m
+[gazebo-2] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33m//database.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-2] [0m[1;33m[Wrn] [Publisher.cc:135] [0m[1;33mQueue limit reached for topic [0m[1;33m/gazebo/default/user_camera/pose[0m[1;33m, deleting message. [0m[1;33mThis warning is printed only once.[0m[1;33m
+[INFO] [spawner-5]: process started with pid [2270]
+[INFO] [spawner-6]: process started with pid [2272]
+[INFO] [spawner-7]: process started with pid [2274]
+[INFO] [spawner-8]: process started with pid [2276]
+[INFO] [spawner-9]: process started with pid [2278]
+[INFO] [spawner-10]: process started with pid [2280]
+[spawn_entity.py-4] [INFO] [1785226620.940680727] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-4] [INFO] [1785226620.941378201] [spawn_entity]: Loading entity XML from file /tmp/tmpfc1kwp2p.urdf
+[spawn_entity.py-4] [INFO] [1785226620.958237128] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-4] [INFO] [1785226620.964277511] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-4] [INFO] [1785226621.623338986] [spawn_entity]: Calling service /spawn_entity
+[gazebo-2] [0m[1;33m[0m[1;33m[0m[INFO] [1785226626.157892524] [imu_imu_sensor_plugin]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[gazebo-2] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/usr/share/gazebo-11/worlds/empty.world[0m[1;32m][0m[1;32m
+[gazebo-2] [1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[spawner-6] [INFO] [1785226629.196057992] [spawner_chassis_steering_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-7] [INFO] [1785226630.409928716] [spawner_chassis_wheels_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [INFO] [1785226629.971578770] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-9] [INFO] [1785226630.209657343] [spawner_left_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[gazebo-2] [0m[1;31m[0m[1;31m[0m[INFO] [1785226630.732461232] [right_camera_rgb_camera_plugin]: Publishing camera info to [/right_camera/rgb/camera_info]
+[spawner-8] [INFO] [1785226630.852694214] [spawner_torso_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-10] [INFO] [1785226630.857484515] [spawner_right_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[gazebo-2] [INFO] [1785226631.147002807] [right_camera_depth_camera_plugin]: Publishing camera info to [/right_camera/depth/camera_info]
+[gazebo-2] [INFO] [1785226631.150692374] [right_camera_depth_camera_plugin]: Publishing depth camera info to [/right_camera/depth/depth/camera_info]
+[gazebo-2] [INFO] [1785226631.154204343] [right_camera_depth_camera_plugin]: Publishing pointcloud to [/right_camera/depth/points]
+[spawn_entity.py-4] [INFO] [1785226631.338035458] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [ylr1d]
+[INFO] [spawn_entity.py-4]: process has finished cleanly [pid 2156]
+[gazebo-2] [INFO] [1785226634.045639200] [right_camera_infrared_camera_plugin]: Publishing camera info to [/right_camera/infrared/camera_info]
+[gazebo-2] [INFO] [1785226634.167042009] [global_camera_rgb_camera_plugin]: Publishing camera info to [/global_camera/rgb/camera_info]
+[gazebo-2] [INFO] [1785226634.214888716] [global_camera_depth_camera_plugin]: Publishing camera info to [/global_camera/depth/camera_info]
+[gazebo-2] [INFO] [1785226634.218911210] [global_camera_depth_camera_plugin]: Publishing depth camera info to [/global_camera/depth/depth/camera_info]
+[gazebo-2] [INFO] [1785226634.219430583] [global_camera_depth_camera_plugin]: Publishing pointcloud to [/global_camera/depth/points]
+[gazebo-2] [INFO] [1785226634.263454501] [global_camera_infrared_camera_plugin]: Publishing camera info to [/global_camera/infrared/camera_info]
+[gazebo-2] [INFO] [1785226634.400825334] [left_camera_rgb_camera_plugin]: Publishing camera info to [/left_camera/rgb/camera_info]
+[gazebo-2] [INFO] [1785226634.456540186] [left_camera_depth_camera_plugin]: Publishing camera info to [/left_camera/depth/camera_info]
+[gazebo-2] [INFO] [1785226634.459392339] [left_camera_depth_camera_plugin]: Publishing depth camera info to [/left_camera/depth/depth/camera_info]
+[gazebo-2] [INFO] [1785226634.460218505] [left_camera_depth_camera_plugin]: Publishing pointcloud to [/left_camera/depth/points]
+[gazebo-2] [INFO] [1785226634.520900621] [left_camera_infrared_camera_plugin]: Publishing camera info to [/left_camera/infrared/camera_info]
+[gazebo-2] [INFO] [1785226637.246064991] [gazebo_ros2_control]: Loading gazebo_ros2_control plugin
+[gazebo-2] [INFO] [1785226637.320665081] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in namespace: /
+[gazebo-2] [INFO] [1785226637.320849746] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in ros 2 node: gazebo_ros2_control
+[gazebo-2] [INFO] [1785226637.350431348] [gazebo_ros2_control]: connected to service!! robot_state_publisher
+[gazebo-2] [INFO] [1785226637.361102910] [gazebo_ros2_control]: Received urdf from param server, parsing...
+[gazebo-2] [INFO] [1785226637.364728849] [gazebo_ros2_control]: Loading parameter files /home/zsj/WorkSpace/test_ylr1d/install/ylr1d_mid_control/share/ylr1d_mid_control/config/controllers.yaml
+[gazebo-2] [rcutils|error_handling.c:65] an error string (message, file name, or formatted message) will be truncated
+[gazebo-2] [ERROR] [1785226637.366689623] [gazebo_ros2_control]: parser error Couldn't parse parameter override rule: '--param robot_description:=<?xml version="1.0" ?><!-- =================================================================================== --><!-- |    This document was autogenerated by xacro from /tmp/tmpl69tkzlc.xacro         | --><!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | --><!-- =================================================================================== --><robot name="ylr1d"><!-- ============================================ --><!-- YAML config values (links.yaml, colors.yaml,  --><!-- limits.yaml, scale.yaml) are passed via xacro --><!-- mappings from the launch file at runtime.     --><!-- ============================================ --><link name="Link_Base, at ./src/rcl/arguments.c:343
+[gazebo-2] 
+[spawner-6] [WARN] [1785226638.963343959] [spawner_chassis_steering_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-6] [INFO] [1785226638.964103842] [spawner_chassis_steering_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-7] [WARN] [1785226640.017798823] [spawner_chassis_wheels_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-7] [INFO] [1785226640.018363874] [spawner_chassis_wheels_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [WARN] [1785226640.066753976] [spawner_joint_state_broadcaster]: Could not contact service /controller_manager/list_controllers
+[spawner-5] [INFO] [1785226640.067388312] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-9] [WARN] [1785226640.348910096] [spawner_left_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-9] [INFO] [1785226640.349564327] [spawner_left_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-8] [WARN] [1785226641.032678927] [spawner_torso_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-8] [INFO] [1785226641.033435731] [spawner_torso_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-10] [WARN] [1785226641.267598401] [spawner_right_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-10] [INFO] [1785226641.268323266] [spawner_right_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-6] [WARN] [1785226649.136672213] [spawner_chassis_steering_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-6] [INFO] [1785226649.137415309] [spawner_chassis_steering_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-7] [WARN] [1785226650.131990366] [spawner_chassis_wheels_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-7] [INFO] [1785226650.132679052] [spawner_chassis_wheels_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [WARN] [1785226650.251395859] [spawner_joint_state_broadcaster]: Could not contact service /controller_manager/list_controllers
+[spawner-5] [INFO] [1785226650.252069798] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-9] [WARN] [1785226650.502024126] [spawner_left_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-9] [INFO] [1785226650.502717740] [spawner_left_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-8] [WARN] [1785226651.143231737] [spawner_torso_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-8] [INFO] [1785226651.143938406] [spawner_torso_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-10] [WARN] [1785226651.362865699] [spawner_right_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-10] [INFO] [1785226651.363552492] [spawner_right_arm_controller]: waiting for service /controller_manager/list_controllers to become available...

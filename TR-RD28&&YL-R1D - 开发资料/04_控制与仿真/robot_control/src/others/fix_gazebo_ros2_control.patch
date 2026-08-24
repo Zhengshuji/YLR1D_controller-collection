@@ -1,0 +1,27 @@
+--- a/gazebo_ros2_control/src/gazebo_ros2_control_plugin.cpp
++++ b/gazebo_ros2_control/src/gazebo_ros2_control_plugin.cpp
+@@ -142,9 +142,21 @@
+   // set the robot description parameter
+   // to propagate it among controller manager and controllers
+-  std::string rb_arg = std::string("robot_description:=") + urdf_string;
+-  arguments.push_back(RCL_PARAM_FLAG);
+-  arguments.push_back(rb_arg);
++  // NOTE: We set robot_description as a node parameter directly instead of
++  // passing it as a CLI --param argument. The CLI approach fails when the URDF
++  // XML contains special characters (<?, <, >, ", &) that rcl's YAML-based
++  // parameter parser cannot handle.
++  {
++    auto node = std::dynamic_pointer_cast<rclcpp::Node>(impl_->model_nh_);
++    try {
++      if (node->has_parameter("robot_description")) {
++        node->set_parameter(rclcpp::Parameter("robot_description", urdf_string));
++      } else {
++        node->declare_parameter("robot_description", urdf_string);
++      }
++    } catch (const std::exception & e) {
++      RCLCPP_ERROR(impl_->model_nh_->get_logger(), "Failed to set robot_description parameter: %s", e.what());
++    }
++  }
+
+   if (sdf->HasElement("ros")) {
+     sdf = sdf->GetElement("ros");
