@@ -13,10 +13,8 @@
 │   ├── GB2312中文.txt             # 提取出的中文字符清单
 │   └── result.txt                 # 处理结果
 ├── 模型文件/          # STEP/SolidWorks 模型文件
-│   ├── origin/                    # 原始 STEP（test.STEP、YLR1D.STEP，约 200MB）
-│   ├── others/                    # 其它 STEP 版本
-│   ├── translated/                # 翻译后的 STEP（test_tr.STEP）
-│   └── modul_SW/                  # SolidWorks 零件/装配（含 加超声波传感器、原版 两个变体）
+│   ├── origin/                    # 原始 STEP
+│   └── modul_SW/                  # SolidWorks 零件/装配
 └── 处理流程说明.md     # STEP 乱码修复流程说明
 ```
 

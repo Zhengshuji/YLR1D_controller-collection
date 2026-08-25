@@ -7,18 +7,8 @@
 ```
 02_模型转换工具/
 ├── urdf_from_step_ros1/       # 第三方 ROS1 包：STEP → URDF（源自 ReconCycle 项目）
-│   ├── README.md              # 原项目英文 README（含原理、安装、用法）
-│   ├── documentation/         # 项目文档与配图
-│   ├── launch/                # ROS1 launch 文件
-│   ├── scripts/create_urdf.py # 核心转换脚本（依赖 pythonocc-core/OCCT）
-│   ├── src/import_asembly/    # 装配体导入模块
-│   └── .git/                  # 保留原 git 仓库
-├── urdf_from_step_ros2/       # ROS2 移植版（顶层版本，功能与 ros1 版一致）
-│   ├── CMakeLists.txt / package.xml / setup.py
-│   ├── launch/build_urdf_from_step.launch.py   # ROS2 launch
-│   ├── launch/template.launch
-│   └── scripts/create_urdf.py
-├── urdf_from_step_ros2_备份/  # ROS2 移植版（另一份拷贝）
+├── urdf_from_step_ros2/       # ROS2 移植版
+├── URDF2Xacro/                # URDF 转换为 Xacro 的工具
 └── urdf2dh/                   # 模型参数提取工作区（详见其 README）
     ├── README.md
     ├── config/                # ylr1d 模型配置（links/colors/limits/scale/dynamics/sensors...）
@@ -45,3 +35,8 @@
 - `urdf_from_step` 系工具依赖较重（pythonocc-core），仅当需要验证 STEP→URDF 自动转换时再使用。
 
 > 整理原则：**只移动、不修改任何文件内容**。两版 `urdf_from_step_ros2` 内容略有差异（顶层版多 `launch/template.launch`），均原样保留。
+
+# 附录
+[urdf_from_step_ros1库](https://github.com/ReconCycle/urdf_from_step)
+
+[urdf_from_step_ros2库](https://github.com/Zhengshuji/urdf_from_step_ros2)
